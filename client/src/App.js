@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import PlayersCard from "./component/PlayersCard"
+import PlayersCard from "./component/PlayersCard";
+import Navbar from "./component/Navbar";
 import "./App.css";
 
 class App extends React.Component {
@@ -19,16 +20,25 @@ class App extends React.Component {
   }
 
   render() {
-    return <div>
-      {this.state.players.map(player =>(
-      <PlayersCard 
-      name={player.name}
-      country={player.country}
-      searches={player.searches}
-      id={player.id}
-      />
-      ))}
-    </div>;
+    return (
+      <div>
+        {" "}
+        <div>
+          <Navbar />
+        </div>
+        <div>
+          {this.state.players.map(player => (
+            <PlayersCard
+              name={player.name}
+              country={player.country}
+              searches={player.searches}
+              id={player.id}
+              key={player.id}
+            />
+          ))}
+        </div>
+      </div>
+    );
   }
 }
 
