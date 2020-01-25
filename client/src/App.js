@@ -4,6 +4,8 @@ import PlayersCard from "./component/PlayersCard";
 import Navbar from "./component/Navbar";
 import "./App.css";
 
+export const url = "http://localhost:5000/api/players";
+
 class App extends React.Component {
   state = {
     players: []
@@ -11,7 +13,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/players")
+      .get(url)
       .then(res => {
         console.log(res);
         this.setState({ ...this.state, players: res.data });
@@ -26,9 +28,9 @@ class App extends React.Component {
         <div>
           <Navbar />
         </div>
-        <div>
+        <div data-testid="list-of-player">
           {this.state.players.map(player => (
-            <PlayersCard
+            <PlayersCard 
               name={player.name}
               country={player.country}
               searches={player.searches}
