@@ -1,10 +1,19 @@
 import React from 'react';
+import ReactDom from "react-dom";
 import { render, waitForElement} from '@testing-library/react';
 import App from "./App";
 import Navbar from "./component/Navbar";
 
+
+
 // import axios from "./_mocks_/axios";
 // import "jest-dom/extend-expect";
+
+it("renders without crashing", () => {
+  const div = document.createElement("div");
+  ReactDom.render(<App />, div);
+  ReactDom.unmountComponentAtNode(div);
+});
 
 
 test('renders without crashing', () => {
