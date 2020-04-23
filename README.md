@@ -22,10 +22,26 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit the `ANSWERS.md` file to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Why would you use class component over function components (removing hooks from the question)?
+- [x] Why would you use class component over function components (removing hooks from the question)?
+
+According to the resources from our TK you cannot use lifecycle methods in functional components. However, ever since the React 16.8 hooks update you can now use lifecycle methods in functional components using the useEffect hook. Also, since class components have been used for a much longer time than functional components, there may be more companies using it.
+
 - [ ] Name three lifecycle methods and their purposes.
+
+constructor() - create components with inciting state data for the initial render . You need to use super() method before any other statement in the constructor().
+
+render() - render basically transforms components into DOM nodes so the browser can display it on the screen.
+
+componentDidMount() - is called after the component is mounted in the DOM. Data fetching is the purpose of using this method within a component.
+
 - [ ] What is the purpose of a custom hook?
+
+It is reusable.
+
 - [ ] Why is it important to test our apps?
+
+It is important to test our apps for multiple reasons. Some being: it makes debugging easier, makes it easier to work in a team, long term performance.
+
 
 ## Project Set Up
 
